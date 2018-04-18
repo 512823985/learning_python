@@ -1,0 +1,53 @@
+设置系统
+	安装Python
+		Windows
+		1、下载python安装文件。
+		2、按照屏幕提示安装（勾选Add Python 2.7 to Path按钮）。
+		3、完成安装后删除安装文件。
+		
+		建议将python安装在默认路径（C:\Python27），打开命令窗口输入命令python。
+		如果看到python提示符说明python安装成功；如果看到'python'不是内部或外部
+		命令，也不是可运行程序或批处理文件，则需要手工设置环境变量。在Windows10
+		系统中，可以按照以下步骤进行设置：
+			1）、鼠标右键点击我的电脑或computer选择属性。
+			2）、点击高级系统设置。
+			3）、点击环境变量。
+			4）、在系统变量下面找到path变量，鼠标双击它。
+			5）、点击新建按钮，填入C:\Python27，点击确定按钮。
+			6）、再次鼠标点击path变量，点击新建按钮，填入C:\Python27\Scripts，点击确定按钮。
+			7）、点击确定保存设置。
+			
+	设置PYTHONPATH环境变量
+		Windows
+		PYTHONPATH的路径是Python安装目录下的site-packages文件夹。如果python安装在 C:\Python27,
+		则site-packages的路径是C:\Python27\Lib\site-packages。在Windows10系统中，可以按照以下
+		步骤进行设置：
+			1）、鼠标右键点击我的电脑或computer选择属性。
+			2）、点击高级系统设置。
+			3）、点击环境变量。
+			4）、在系统变量下面点击新建按钮。
+			5）、在变量名中填入PYTHONPATH，在变量值中填入site-packages文件夹的路径，点击确定按钮。
+			6）、点击确定保存设置。
+		验证PYTHONPATH路径是否存在，在命令行窗口输入echo %PYTHONPATH%。如果看到site-packages的路径，
+		则说明PYTHONPATH路径设置正确。
+		
+	安装setuptools和pip
+		python2.7.14默认已经安装setuptools和pip。
+		
+	虚拟环境
+		Windows
+		安装virtualenv和virtualenvwrapper,在命令行窗口输入：pip install virtualenvwrapper-win。
+		
+		创建一个虚拟环境，在命令行窗口输入 mkvirtualenv rango，虚拟环境会被自动激活。
+		
+		如果打开另外一个命令行窗口，激活虚拟环境需要输入 workon rango，在当前激活的虚拟环境(rango)下
+		输入pip list可以查看当前虚拟环境(rango)安装了哪些包。
+		
+		如果想要查看有多少个虚拟环境可以在命令行窗口输入lsvirtualenv。
+		
+		退出当前虚拟环境，可以在命令行窗口输入deactivate。
+		
+		删除虚拟环境，可以在命令行窗口输入rmvirtualenv rango。
+		
+		默认创建的虚拟环境位置位于C:\Users\username\envs,可以通过环境变量 WORKON_HOME 来定制。
+		通过计算机-->属性-->高级系统设置-->环境变量-->在系统变量(用户变量)中新建"变量名": WORKON_HOME,变量值: "你自定义的路径"。
