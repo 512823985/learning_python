@@ -1,0 +1,46 @@
+﻿Git速成课程
+	Git由四个独立的存储位置组成：本地工作空间、本地索引、本地仓库、远程仓库。
+	
+	安装git
+		Windows
+		通过https://git-scm.com/download/win地址，下载git客户端进行安装。
+	
+	设置git
+		假设你已经有GitHub账号，并且在GitHub上创建了一个新的仓库。按照下面
+		的步骤可以设置本地仓库和工作空间：
+			1、克隆远程仓库到本地计算机。
+				1）、打开gitbash，输入cd Desktop/
+				2）、输入git clone https://<USER>:<PASS>@github.com/<OWNER>/<REPO_NAME>.git <workspace>
+					<USER>：github用户名。（可选）
+					<PASS>：github密码。（可选）
+					<OWNER>：远程仓库的所有者。
+					<REPO_NAME>：远程仓库的名字。
+					<workspace>：本地工作空间的名字，可选，不写的话本地工作空间的名字为远程仓库的名字。
+			2、克隆完成后，后创建一个隐藏的文件夹.git，它里面存储着本地仓库和本地索引。
+				
+	最后调整
+	
+		关联远程git仓库需要用户名和邮箱，通过以下设置可以避免每次都填写用户名和邮箱。
+		git config user.name "用户名"
+		git config user.email "邮箱"
+		
+		.gitignore文件
+		创建.gitignore文件，在.gitignore文件中设置，可以忽略某些文件，不进行版本控制。
+		例如：对python的编译文件进行忽略，如果是python2可以在.gitignore文件中写入：*.pyc
+		如果是python3可以在.gitignore文件中写入：__pycache__/
+		
+	基本命令和工作流程
+		1、git clone 或者 git pull
+		2、git status
+			1）、git add <filename> or .
+			2）、git mv <current_filename> <new_filename>
+			3）、git cp <current_filename> <copied_filename>
+			4）、git rm <filename> or git rm -rf <directory>/
+		3、git commit -m "注释"
+		4、git pull（同步失败，git merge）
+		5、git push origin master（push之前都要进行pull）
+		
+	版本恢复
+		1、git log or git log --pretty=oneline
+		2、git checkout <commit hash> . （在工作空间的根目录下执行命令）
+		3、git commit
